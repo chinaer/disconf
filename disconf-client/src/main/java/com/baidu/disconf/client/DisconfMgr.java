@@ -84,10 +84,10 @@ public class DisconfMgr implements ApplicationContextAware {
 
             LOGGER.info("******************************* DISCONF START FIRST SCAN *******************************");
 
-            // registry
+            // registry( new SpringRegistry(applicationContext))
             Registry registry = RegistryFactory.getSpringRegistry(applicationContext);
 
-            // 扫描器
+            // 扫描器ScanMgrImpl
             scanMgr = ScanFactory.getScanMgr(registry);
 
             // 第一次扫描并入库

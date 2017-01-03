@@ -118,7 +118,7 @@ public class ReflectionScanStatic implements ScanStaticStrategy {
         //
         // 配置文件MAP
         //
-        Set<Class<?>> classdata = scanModel.getDisconfFileClassSet();
+        Set<Class<?>> classdata = scanModel.getDisconfFileClassSet(); //带DisconfFile注解的class
         for (Class<?> classFile : classdata) {
             disconfFileItemMap.put(classFile, new HashSet<Method>());
         }
@@ -126,7 +126,7 @@ public class ReflectionScanStatic implements ScanStaticStrategy {
         //
         // 将配置文件与配置文件中的配置项进行关联
         //
-        Set<Method> af1 = scanModel.getDisconfFileItemMethodSet();
+        Set<Method> af1 = scanModel.getDisconfFileItemMethodSet();//带DisconfFileItem注解的方法
         for (Method method : af1) {
 
             Class<?> thisClass = method.getDeclaringClass();

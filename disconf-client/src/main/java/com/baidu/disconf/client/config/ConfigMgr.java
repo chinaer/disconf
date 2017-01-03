@@ -30,13 +30,13 @@ public class ConfigMgr {
         //
         LOGGER.info("Finer print: " + DisClientComConfig.getInstance().getInstanceFingerprint());
 
-        // 导入系统配置
+        // 导入系统配置,加载disconf_sys.properties文件到DisClientSysConfig
         DisClientSysConfig.getInstance().loadConfig(null);
 
         // 校验 系统配置
         DisInnerConfigHelper.verifySysConfig();
 
-        // 导入用户配置
+        // 导入用户配置,加载disconf.properties或者disconf.conf路径下的文件到DisClientConfig
         DisClientConfig.getInstance().loadConfig(null);
 
         // 校验 用户配置

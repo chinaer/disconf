@@ -19,27 +19,30 @@ public class ScanStaticModel {
     private Reflections reflections;
 
     //
-    // 配置文件
+    // 配置文件 带DisconfFile注解的class
     private Set<Class<?>> disconfFileClassSet;
 
-    // 配置文件中的函数
+    // 配置文件中的函数  带DisconfFileItem注解的方法
     private Set<Method> disconfFileItemMethodSet;
 
     //
     // 配置文件及其函数的MAP, KEY为配置文件类
+    //记录了DisconfFile 和 DisconfFileItem 的一对多的对应关系
     private Map<Class<?>, Set<Method>> disconfFileItemMap;
 
     //
-    // 配置ITEM
+    // 配置ITEM   带DisconfItem注解的方法
     private Set<Method> disconfItemMethodSet;
 
     //
-    // 主从切换的回调函数类
+    // 主从切换的回调函数类 带DisconfActiveBackupService注解的class
     private Set<Class<?>> disconfActiveBackupServiceClassSet;
 
     //
-    // 更新 回调函数类
+    // 更新 回调函数类  带DisconfUpdateService注解的class
     private Set<Class<?>> disconfUpdateService;
+
+    //带IDisconfUpdatePipeline注解的class 取第一个
     private Class<IDisconfUpdatePipeline> iDisconfUpdatePipeline = null;
 
     // 只是托管的配置文件，没有注入到类中

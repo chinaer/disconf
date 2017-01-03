@@ -64,7 +64,7 @@ public class ScanMgrImpl implements ScanMgr {
 
         LOGGER.debug("start to scan package: " + packageNameList.toString());
 
-        // 获取扫描对象并分析整合
+        // 获取扫描对象并分析整合 调用ReflectionScanStatic.scan
         scanModel = scanStaticStrategy.scan(packageNameList);
 
         // 增加非注解的配置
