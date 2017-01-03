@@ -60,7 +60,7 @@ public class DisconfCenterStore {
     private String machineName;
 
     /**
-     * 存储 一个配置文件
+     * 存储 一个配置文件(对应一个DisconfCenterFile 一个配置class类)
      */
     public void storeOneFile(DisconfCenterBaseModel disconfCenterBaseModel) {
 

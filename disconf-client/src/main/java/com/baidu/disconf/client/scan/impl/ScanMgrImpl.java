@@ -73,6 +73,7 @@ public class ScanMgrImpl implements ScanMgr {
         // 放进仓库
         for (StaticScannerMgr scannerMgr : staticScannerMgrList) {
 
+            //默认有三个扫描器:StaticScannerFileMgrImpl,StaticScannerItemMgrImpl,StaticScannerNonAnnotationFileMgrImpl
             // 扫描进入仓库
             scannerMgr.scanData2Store(scanModel);
 

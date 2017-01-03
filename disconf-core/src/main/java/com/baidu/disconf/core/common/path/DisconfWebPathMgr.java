@@ -34,7 +34,7 @@ public class DisconfWebPathMgr {
 
         StringBuffer sb = new StringBuffer();
         sb.append(urlPrefix);
-
+        //配置文件和配置项url不同:http://host:port/file?app=&version=&key=&type= 和 http://host:port/item 开头
         if (disConfigTypeEnum.getType() == DisConfigTypeEnum.FILE.getType()) {
             sb.append(Constants.SEP_STRING + Constants.STORE_FILE_URL_KEY);
         } else {

@@ -70,7 +70,7 @@ public class StaticScannerFileMgrImpl extends StaticScannerMgrImplBase implement
             if (methods == null) {
                 continue;
             }
-
+            //每一个class文件对应的DisconfCenterFile对象的初始化,包括keyMaps属性赋值,对应访问数据的url
             DisconfCenterFile disconfCenterFile = transformScanFile(disconfFile, methods);
 
             disconfCenterFiles.add(disconfCenterFile);
@@ -122,13 +122,13 @@ public class StaticScannerFileMgrImpl extends StaticScannerMgrImplBase implement
         Field[] expectedFields = disconfFileClass.getDeclaredFields();
 
         //
-        // KEY & VALUE
+        // KEY & VALUE  properties文件每一行key-value键值对
         //
         Map<String, FileItemValue> keyMaps = new HashMap<String, FileItemValue>();
 
         for (Method method : methods) {
 
-            // 获取指定的域
+            // 获取指定的域,通过get is以及注解的associateField属性获取关联field字段
             Field field = MethodUtils.getFieldFromMethod(method, expectedFields, DisConfigTypeEnum.FILE);
             if (field == null) {
                 continue;

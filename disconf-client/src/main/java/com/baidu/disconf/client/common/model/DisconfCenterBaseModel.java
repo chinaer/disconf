@@ -12,9 +12,10 @@ public abstract class DisconfCenterBaseModel {
     private Object object;
 
     // 远程配置服务的URL路径,不包含IP和PORT的
+    //配置文件和配置项url不同:http://host:port/file?app=&version=&key=&type= 和 http://host:port/item 开头
     private String remoteServerUrl;
 
-    // 通用配置
+    // 通用配置 包括app,version, env信息
     private DisConfCommonModel disConfCommonModel = new DisConfCommonModel();
 
     // 回调函数

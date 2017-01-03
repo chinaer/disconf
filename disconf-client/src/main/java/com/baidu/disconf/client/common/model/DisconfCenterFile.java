@@ -16,7 +16,7 @@ import com.baidu.disconf.core.common.utils.ClassLoaderUtil;
 import com.baidu.disconf.core.common.utils.OsUtil;
 
 /**
- * 配置文件表示
+ * 配置文件表示核心类
  *
  * @author liaoqiqi
  * @version 2014-5-20
@@ -26,7 +26,7 @@ public class DisconfCenterFile extends DisconfCenterBaseModel {
     protected static final Logger LOGGER = LoggerFactory.getLogger(DisconfCenterFile.class);
 
     // -----key: 配置文件中的项名
-    // -----value: 默认值
+    // -----value: 默认值,包括setMethod Field对象
     private Map<String, FileItemValue> keyMaps = new HashMap<String, FileItemValue>();
 
     // 额外的配置数据，非注解式使用它来存储
@@ -38,13 +38,13 @@ public class DisconfCenterFile extends DisconfCenterBaseModel {
     // 配置文件类
     private Class<?> cls;
 
-    // 文件名
+    // 文件名,根据注解值DisconfFile.filename来
     private String fileName;
 
-    // 配置文件 指定路径下
+    // 配置文件 指定路径下,根据注解值DisconfFile.targetDirPath来
     private String targetDirPath;
 
-    // 文件类型
+    // 文件类型 根据注解值DisconfFile.filename判断文件后缀
     private SupportFileTypeEnum supportFileTypeEnum = SupportFileTypeEnum.ANY;
 
     public Class<?> getCls() {
@@ -178,7 +178,7 @@ public class DisconfCenterFile extends DisconfCenterBaseModel {
     }
 
     /**
-     * 配置文件Item项表示，包括了值，还有其类型
+     * 配置文件Item项表示，包括了值，还有其类型,相当于每一个properties文件中的一行key-value键值对
      *
      * @author liaoqiqi
      * @version 2014-6-16
