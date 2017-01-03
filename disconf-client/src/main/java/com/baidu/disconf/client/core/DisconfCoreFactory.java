@@ -21,7 +21,7 @@ public class DisconfCoreFactory {
      */
     public static DisconfCoreMgr getDisconfCoreMgr(Registry registry) throws Exception {
 
-        FetcherMgr fetcherMgr = FetcherFactory.getFetcherMgr();
+        FetcherMgr fetcherMgr = FetcherFactory.getFetcherMgr();  //抓取远程文件的抓取器
 
         //
         // 不开启disconf，则不要watch了

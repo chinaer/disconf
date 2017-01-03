@@ -66,6 +66,7 @@ public class DisconfFileCoreProcessorImpl implements DisconfCoreProcessor {
         }
     }
 
+    //处理单个文件核心方法
     @Override
     public void processOneItem(String key) {
 
@@ -82,7 +83,8 @@ public class DisconfFileCoreProcessorImpl implements DisconfCoreProcessor {
     }
 
     /**
-     * 更新 一個配置文件, 下载、注入到仓库、Watch 三步骤
+     * 远程文件和本地内存,本地文件三者统一处理方法,优先使用远程文件
+     * 更新 一个配置文件, 下载、注入到仓库、Watch 三步骤
      */
     private void updateOneConfFile(String fileName, DisconfCenterFile disconfCenterFile) throws Exception {
 

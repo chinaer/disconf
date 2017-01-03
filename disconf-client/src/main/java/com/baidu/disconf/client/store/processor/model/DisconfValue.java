@@ -15,7 +15,7 @@ public class DisconfValue {
     // 配置项使用
     private String value;
 
-    // 配置文件使用
+    // 配置文件使用,每个properties文件(远程到本地后)最后转换成了一个hashMap存放在这里
     private Map<String, Object> fileData = new HashMap<String, Object>();
 
     public String getValue() {

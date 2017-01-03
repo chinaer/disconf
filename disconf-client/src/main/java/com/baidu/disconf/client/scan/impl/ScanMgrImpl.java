@@ -74,7 +74,7 @@ public class ScanMgrImpl implements ScanMgr {
         for (StaticScannerMgr scannerMgr : staticScannerMgrList) {
 
             //默认有三个扫描器:StaticScannerFileMgrImpl,StaticScannerItemMgrImpl,StaticScannerNonAnnotationFileMgrImpl
-            // 扫描进入仓库
+            // 扫描进入仓库(此时只是在内存中)
             scannerMgr.scanData2Store(scanModel);
 
             // 忽略哪些KEY

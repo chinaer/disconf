@@ -178,7 +178,7 @@ public class DisconfStoreFileProcessorImpl implements DisconfStoreProcessor {
     }
 
     /**
-     *
+     *将每个配置文件的数据注入到仓库内存中
      */
     @Override
     public void inject2Store(String fileName, DisconfValue disconfValue) {

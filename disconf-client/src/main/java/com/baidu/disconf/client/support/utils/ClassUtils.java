@@ -107,7 +107,6 @@ public class ClassUtils {
      */
     public static Object getValeByType(Class<?> type, Object value)
             throws Exception {
-
         // 预处理
         if (!(value instanceof String)) {
             value = "";

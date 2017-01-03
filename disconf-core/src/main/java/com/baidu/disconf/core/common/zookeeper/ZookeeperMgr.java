@@ -99,7 +99,7 @@ public class ZookeeperMgr {
 
         LOGGER.info("zoo prefix: " + defaultPrefixString);
 
-        // 新建父目录
+        // 新建父目录,zk连接后就开始新建目录
         makeDir(defaultPrefixString, ZooUtils.getIp());
     }
 
