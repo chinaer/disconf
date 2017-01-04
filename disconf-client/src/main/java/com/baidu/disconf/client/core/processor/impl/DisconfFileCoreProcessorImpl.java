@@ -160,7 +160,7 @@ public class DisconfFileCoreProcessorImpl implements DisconfCoreProcessor {
     @Override
     public void updateOneConfAndCallback(String key) throws Exception {
 
-        // 更新 配置
+        // 更新 配置 并且Watch相关路径
         updateOneConf(key);
 
         // 回调
